@@ -1,4 +1,4 @@
-# Insert Lesson Title
+# Introduction to React JS
 
 ## Dependencies
 
@@ -10,11 +10,15 @@ Refer to the following markdown file for the respective sections of the class:
 ## Lesson Objectives
 
 Learners will understand:
-- Insert the knowledge to be acquired
+- What is Virtual DOM, how does it work differently as compared to a usual DOM.
+- What is JSX and how is it different from HTML. 
 
 Learners will be able to:
-- Insert the skillset to be acquired
-
+- Create a react project using `npx create-react-app` command.
+- Write simple JSX.
+- Create a functional component and render it.
+- Use fragment `<> </>`.
+- Apply CSS.
 
 ## Lesson Plan
 
