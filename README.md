@@ -10,6 +10,7 @@ Refer to the following markdown file for the respective sections of the class:
 ## Lesson Objectives
 
 Learners will understand:
+- What is NPM and `package.json` file.
 - What is Virtual DOM, how does it work differently as compared to a usual DOM.
 - What is JSX and how is it different from HTML. 
 
