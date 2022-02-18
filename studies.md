@@ -11,10 +11,11 @@ Technical knowledge is vast. Timebox yourself for 3 hours to work on the followi
 
 ### Readings
 
-- add links
+- [Hello React](https://reactjs.org/docs/hello-world.html)
+- [Introducing JSX](https://reactjs.org/docs/introducing-jsx.html)
 
 ### Helpful Links (References)
 
-- add links
+- [React Official Page](https://reactjs.org/docs)
 
 
