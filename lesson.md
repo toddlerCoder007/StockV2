@@ -6,50 +6,103 @@ There are two folders prepared for the lesson.
 - [Instructor's folder](./lesson-sample-code/instructor-demo-code)
 - [Learners' folder](./lesson-sample-code/learners-practice-code)
 
-Instructor to use the code provided for demonstration during the I DO segment. Learners will use the java file provided in the respective folder for practice during the WE DO segment.
+### Notes 
 
-### Any other announcements to instructors or learners
-
-Instructors are to code from scratch. You may use the sample code in this repository as reference along the way.
+> Instructors are to code from scratch. You may use the sample code in this repository as reference along the way.
 
 ---
 
-## Part 1 - Create React App & Explore the project structure
+## Part 1 - Create React App
 
-Instructor to create a react app using [this](https://reactjs.org/docs/create-a-new-react-app.html) method.
+[Create React App Reference](https://reactjs.org/docs/create-a-new-react-app.html)
 
-Open terminal on VS Code.
-Enter ```npx create-react-app my-first-app```
+Open terminal on VS Code and enter the following command: 
+```
+npx create-react-app my-first-app
+```
 
-A project will be generated. Take the students for a tour to explain how JSX is being rendered into a DOM element.
+A React project will be generated in the `my-first-app` folder. Take a look at how JSX is being rendered into DOM element.
 
-Remember to perform ```npm run start``` to lift the app up. As you go through the remaining parts, let the app perform hot reload.
+Change to the app folder:
+```
+cd my-first-app
+```
+Start the app:
+```
+npm start
+```
+Once the React app has compiled succesfully, the server will be up and you can view the app in your browser at `http://localhost:3000`. From this point onwards, the app automatically reload whenever you save any new changes to your source code. 
 
-Clean up the folder directory by removing the following files:
-- reportWebVitals.js
-- setupTests.js
-- App.test.js
+> While the server is running, port:3000 will be reserved until you 'kill' the server by  CTRL-C. If you start another React app server with `npm start`, you will be asked to choose a different port number.
 
-Remove the code that relates to these files in ```index.js```.
+Clean up the project folder by removing the following files:
+```
+src/reportWebVitals.js
+src/setupTests.js
+src/App.test.js
+```
 
----
+Remove the code that relates to these files in `index.js`.
 
-## Part 2 - Demonstrate of JSX and Creation of To-do App
+## Part 2 - JSX Demo (To Do List)
 
-To accomplish this part, instructor should demonstrate using the following JSX to create a functional component. Edit ```App.js``` to accommodate the following JSXes.
+To accomplish this part, instructor should demonstrate using the following JSX to create a functional component. Edit `App.js` to accommodate the following JSX code.
 
-```<h1>``` (Big title "Todo App")
-```<ul>``` and ```<li>``` (List the tasks)
-```<input type='checkbox'>``` (At the end of each task as done indicator)
+```html
+  <h1>                      // Big title "Todo App"
+  <ul> and <li>             // List the tasks
+  <input type='checkbox'>   // At the end of each task as done indicator
+```
 
----
+## Part 3 - JSX Rules and Features
 
-## Part 3 - Demonstrating Fragments
+### Fragments 
 
-This will be a simple demonstration of using <> and </> fragment. Fragments are used to group elements together in a parent node. Note how React would return errors if two parent nodes are used without fragments.
+This will be a simple demonstration of using <> and </> fragment. Fragments are used to group elements together in a parent node. Note how React would return errors if two parent nodes are used without fragments. 
 
----
+### camelCase Code Style
+
+JSX is converted into native Javascript (JS) and attributes written in JSX that will become keys in JS objects. As JS has limitation on variable names, e.g. they cannot contain dashes or reserved workds. HTML attributes needs to be adapted to work around these limitations: 
+- HTML `class` attribute shall be `className`, to avoid clashing with reserved JS keyword.
+- Dashes shall be removed and replaced with an initial capital, e.g. `background-color` shall be `backgroundColor`.
 
 ## Part 4 - Applying CSS
 
-CSS can be applied to our App.js using a css file. All the selectors that work with plain HTML also can apply to JSX. Feel free to try to style the various elements using the App.css file.
+There are many ways to apply CSS to your React app:
+- Inline styling
+- CSS stylesheets
+- CSS modules
+
+All the selectors that work with plain HTML also can apply to JSX. Feel free to try to style the various elements using the App.css file. Remember to Use camelCase when naming React styles.
+
+### Using CSS Modules
+
+Create a CSS module file with a `.module.css` extension, e.g. `MyComponent.module.css`. Write regular CSS in your `.module.css` file.
+```css
+  .heading {
+    color: red;
+    padding: 1.5rem;
+    text-align: center;
+  } 
+  .bodyText {
+    color: blue;  
+  }
+
+```
+
+Import the CSS module file into your component:
+```js
+  // In MyComponent.js file
+   
+  import styles from './MyComponent.module.css'
+  function MyComponent() {
+    return (
+      <>
+        <h1 className='styles.heading'>Component Heading</h1>
+        <p className='styles.bodyText'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sagittis elit ipsum, iaculis bibendum eros mattis quis. Proin nisi orci, ultricies quis volutpat aliquam, ornare non odio. </p>
+      </>
+    )
+  }
+```
+
+>CSS inside a module is available only for the component that imports it, therefore you there is no risk global name conflicts.
