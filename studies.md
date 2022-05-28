@@ -17,4 +17,14 @@
 - [React Fragments](https://reactjs.org/docs/fragments.html)
 - [React and CSS](https://www.w3schools.com/react/react_css_styling.asp)
 
+### Useful Links
+
+- [React Official Page](https://reactjs.org/docs/getting-started.html)
+- [React Official Page (beta)](https://beta.reactjs.org)
+- [Create React App Page](https://create-react-app.dev/)
+
+How to insert images into React
+- [Adding images to fonts and files](https://create-react-app.dev/docs/adding-images-fonts-and-files/)
+- [Reference a local image in React](https://stackoverflow.com/questions/39999367/how-do-i-reference-a-local-image-in-react) 
+
 

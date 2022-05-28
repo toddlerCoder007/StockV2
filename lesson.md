@@ -33,7 +33,7 @@ npm start
 ```
 Once the React app has compiled succesfully, the server will be up and you can view the app in your browser at `http://localhost:3000`. From this point onwards, the app automatically reload whenever you save any new changes to your source code. 
 
-> While the server is running, port:3000 will be reserved until you 'kill' the server by  CTRL-C. If you start another React app server with `npm start`, you will be asked to choose a different port number.
+While the server is running, port:3000 will be reserved until you 'kill' the server by  CTRL-C. If you start another React app server with `npm start`, you will be asked to choose a different port number.
 
 Clean up the project folder by removing the following files:
 ```
@@ -105,4 +105,4 @@ Import the CSS module file into your component:
   }
 ```
 
->CSS inside a module is available only for the component that imports it, therefore you there is no risk global name conflicts.
+CSS code inside a module is available only for the component that imports it, therefore you there is no risk global name conflicts.
