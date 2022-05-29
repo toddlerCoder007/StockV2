@@ -9,15 +9,22 @@
 
 ### Reading List
 
+NPM 
 - [What is NPM?](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - [What is the use of package.json](https://docs.npmjs.com/creating-a-package-json-file)
-- ['Hello World!' in  React](https://reactjs.org/docs/hello-world.html)
-- [Introducing JSX](https://reactjs.org/docs/introducing-jsx.html)
-- [Getting started with React](https://medium.com/easyread/how-to-get-started-with-react-js-805bf57826ad)
-- [React Fragments](https://reactjs.org/docs/fragments.html)
+
+React
+- [React Quick Start](https://beta.reactjs.org/learn)
+- [Your first component](https://beta.reactjs.org/learn/your-first-component)
+- [Writing markup with JSX](https://beta.reactjs.org/learn/writing-markup-with-jsx)
 - [React and CSS](https://www.w3schools.com/react/react_css_styling.asp)
 
-### Useful Links
+Legacy documentation (optional)
+- [Introducing JSX (legacy)](https://reactjs.org/docs/introducing-jsx.html)
+- [React Fragments (legacy)](https://reactjs.org/docs/fragments.html)
+- ['Hello World!' in React (legacy)](https://reactjs.org/docs/hello-world.html)
+
+### Helpful Links (References)
 
 - [React Official Page](https://reactjs.org/docs/getting-started.html)
 - [React Official Page (beta)](https://beta.reactjs.org)

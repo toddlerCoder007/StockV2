@@ -1,13 +1,5 @@
 ## Brief
 
-### How to use the lesson sample code
-
-There are two folders prepared for the lesson. 
-- [Instructor's folder](./lesson-sample-code/instructor-demo-code)
-- [Learners' folder](./lesson-sample-code/learners-practice-code)
-
-### Notes 
-
 > Instructors are to code from scratch. You may use the sample code in this repository as reference along the way.
 
 ---
@@ -41,7 +33,6 @@ src/reportWebVitals.js
 src/setupTests.js
 src/App.test.js
 ```
-
 Remove the code that relates to these files in `index.js`.
 
 ## Part 2 - JSX Demo (To Do List)
