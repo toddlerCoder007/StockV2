@@ -22,7 +22,7 @@
 - [React Official Page (beta)](https://beta.reactjs.org)
 - [Create React App Page](https://create-react-app.dev/)
 
-How to insert images into React
+**How to insert images into React**
 - [Adding images to fonts and files](https://create-react-app.dev/docs/adding-images-fonts-and-files/)
 - [Reference a local image in React](https://stackoverflow.com/questions/39999367/how-do-i-reference-a-local-image-in-react) 
 
@@ -40,12 +40,32 @@ How to insert images into React
 - [Destructuring (w3schools)](https://www.w3schools.com/react/react_es6_destructuring.asp)
 - [Destructuring (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
-Legacy documentation (optional)
-- [Class Components (legacy)](https://www.geeksforgeeks.org/reactjs-class-based-components/)
-- [Components and Props (legacy)](https://reactjs.org/docs/components-and-props.html)
+Legacy (optional)
+- [Class Components](https://www.geeksforgeeks.org/reactjs-class-based-components/) - legacy
+- [Components and Props](https://reactjs.org/docs/components-and-props.html) - legacy
 
 ### Helpful Links (References)
 
 - [ES6 concepts commonly used in React](https://www.w3schools.com/react/react_es6.asp)
 - [Difference between Functional and Class components](https://www.geeksforgeeks.org/differences-between-functional-components-and-class-components-in-react/)
 - [Converting from Class to Functional Components](https://www.digitalocean.com/community/tutorials/five-ways-to-convert-react-class-components-to-functional-components-with-react-hooks)
+
+## 2.3: Your First Hook: useState
+
+### Self-Study List
+
+- [Using the State Hook](https://reactjs.org/docs/hooks-state.html) - from the official React documentation 
+
+Legacy (optional)
+
+- [State and Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html) - legacy
+- [Component State - setState](https://reactjs.org/docs/faq-state.html) - legacy
+- [Component Lifecycle](https://blog.logrocket.com/react-lifecycle-methods-tutorial-examples/) - legacy
+- [Component Lifecycle - GeeksForGeeks](https://www.geeksforgeeks.org/reactjs-lifecycle-components/) - legacy
+
+### Helpful Links (References)
+
+- [Hooks Reference](https://reactjs.org/docs/hooks-reference.html) - built-in hooks API
+- [Usefuls React Hooks](https://www.smashingmagazine.com/2021/11/useful-react-hooks/) - list of React hooks that you may encounter in the future 
+- [Introduction to React Hooks](https://www.freecodecamp.org/news/introduction-to-react-hooks/) - talks about useEffect hook, which you will learn in future chapters
+- [react-use package](https://github.com/streamich/react-use) - 3rd party NPM package libray of interesting hooks
