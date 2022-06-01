@@ -89,8 +89,8 @@ Import the CSS module file into your component:
   function MyComponent() {
     return (
       <>
-        <h1 className='styles.heading'>Component Heading</h1>
-        <p className='styles.bodyText'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sagittis elit ipsum, iaculis bibendum eros mattis quis. Proin nisi orci, ultricies quis volutpat aliquam, ornare non odio. </p>
+        <h1 className={styles.heading}>Component Heading</h1>
+        <p className={styles.bodyText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sagittis elit ipsum, iaculis bibendum eros mattis quis. Proin nisi orci, ultricies quis volutpat aliquam, ornare non odio. </p>
       </>
     )
   }
