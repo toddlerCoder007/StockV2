@@ -58,10 +58,10 @@ Legacy (optional)
 
 Legacy (optional)
 
-- [State and Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html) - legacy
-- [Component State - setState](https://reactjs.org/docs/faq-state.html) - legacy
-- [Component Lifecycle](https://blog.logrocket.com/react-lifecycle-methods-tutorial-examples/) - legacy
-- [Component Lifecycle - GeeksForGeeks](https://www.geeksforgeeks.org/reactjs-lifecycle-components/) - legacy
+- [State and Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html) - uses class components
+- [Component State - setState](https://reactjs.org/docs/faq-state.html) - uses class components
+- [Component Lifecycle](https://blog.logrocket.com/react-lifecycle-methods-tutorial-examples/) - uses class components
+- [Component Lifecycle - GeeksForGeeks](https://www.geeksforgeeks.org/reactjs-lifecycle-components/) - uses class components
 
 ### Helpful Links (References)
 
@@ -69,3 +69,16 @@ Legacy (optional)
 - [Usefuls React Hooks](https://www.smashingmagazine.com/2021/11/useful-react-hooks/) - list of React hooks that you may encounter in the future 
 - [Introduction to React Hooks](https://www.freecodecamp.org/news/introduction-to-react-hooks/) - talks about useEffect hook, which you will learn in future chapters
 - [react-use package](https://github.com/streamich/react-use) - 3rd party NPM package libray of interesting hooks
+
+## 2.4: Handling Events
+
+### Self-Study List
+
+- [React Events](https://www.w3schools.com/react/react_events.asp) - quick intro from w3schools
+- [Passing Functions into useState Updates](https://reactjs.org/docs/hooks-reference.html#usestate) - Passing functions to update functions in useState
+- [Responding to Events](https://beta.reactjs.org/learn/adding-interactivity#responding-to-events) - from ReactJS documentation (beta)
+- [Higher Order Functions](https://www.freecodecamp.org/news/a-quick-intro-to-higher-order-functions-in-javascript-1a014f89c6b) - somewhat theoretical, but essential to under how functions are passed in JS
+
+Legacy (optional)
+- [React documentation](https://reactjs.org/docs/handling-events.html) - uses class components
+- [Passing Functions as props](https://scriptverse.academy/tutorials/reactjs-pass-props-to-functional-component.html) - uses class component
