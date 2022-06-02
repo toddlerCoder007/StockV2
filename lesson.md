@@ -53,7 +53,7 @@ This will be a simple demonstration of using <> and </> fragment. Fragments are 
 
 ### camelCase Code Style
 
-JSX is converted into native Javascript (JS) and attributes written in JSX that will become keys in JS objects. As JS has limitation on variable names, e.g. they cannot contain dashes or reserved workds. HTML attributes needs to be adapted to work around these limitations: 
+JSX is converted into native Javascript (JS) and attributes written in JSX that will become keys in JS objects. As JS has limitation on variable names, e.g. they cannot contain dashes or reserved words. HTML attributes needs to be adapted to work around these limitations: 
 - HTML `class` attribute shall be `className`, to avoid clashing with reserved JS keyword.
 - Dashes shall be removed and replaced with an initial capital, e.g. `background-color` shall be `backgroundColor`.
 
@@ -96,4 +96,4 @@ Import the CSS module file into your component:
   }
 ```
 
-CSS code inside a module is available only for the component that imports it, therefore you there is no risk global name conflicts.
+CSS code inside a module is available only to the component that imports it, therefore there is no risk global name conflicts.
