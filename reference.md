@@ -16,7 +16,7 @@
 - [React Fragments](https://reactjs.org/docs/fragments.html)
 - [React and CSS](https://www.w3schools.com/react/react_css_styling.asp)
 
-### Helpful Links (References)
+### Helpful Links
 
 - [React Official Page](https://reactjs.org/docs/getting-started.html)
 - [React Official Page (beta)](https://beta.reactjs.org)
@@ -40,11 +40,11 @@
 - [Destructuring (w3schools)](https://www.w3schools.com/react/react_es6_destructuring.asp)
 - [Destructuring (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
-Legacy (optional)
+### Legacy (optional)
 - [Class Components](https://www.geeksforgeeks.org/reactjs-class-based-components/) - legacy
 - [Components and Props](https://reactjs.org/docs/components-and-props.html) - legacy
 
-### Helpful Links (References)
+### Helpful Links
 
 - [ES6 concepts commonly used in React](https://www.w3schools.com/react/react_es6.asp)
 - [Difference between Functional and Class components](https://www.geeksforgeeks.org/differences-between-functional-components-and-class-components-in-react/)
@@ -56,14 +56,14 @@ Legacy (optional)
 
 - [Using the State Hook](https://reactjs.org/docs/hooks-state.html) - from the official React documentation 
 
-Legacy (optional)
+### Legacy (optional)
 
 - [State and Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html) - uses class components
 - [Component State - setState](https://reactjs.org/docs/faq-state.html) - uses class components
 - [Component Lifecycle](https://blog.logrocket.com/react-lifecycle-methods-tutorial-examples/) - uses class components
 - [Component Lifecycle - GeeksForGeeks](https://www.geeksforgeeks.org/reactjs-lifecycle-components/) - uses class components
 
-### Helpful Links (References)
+### Helpful Links
 
 - [Hooks Reference](https://reactjs.org/docs/hooks-reference.html) - built-in hooks API
 - [Usefuls React Hooks](https://www.smashingmagazine.com/2021/11/useful-react-hooks/) - list of React hooks that you may encounter in the future 
@@ -79,6 +79,15 @@ Legacy (optional)
 - [Responding to Events](https://beta.reactjs.org/learn/adding-interactivity#responding-to-events) - from ReactJS documentation (beta)
 - [Higher Order Functions](https://www.freecodecamp.org/news/a-quick-intro-to-higher-order-functions-in-javascript-1a014f89c6b) - somewhat theoretical, but essential to under how functions are passed in JS
 
-Legacy (optional)
+### Legacy (optional)
 - [React documentation](https://reactjs.org/docs/handling-events.html) - uses class components
 - [Passing Functions as props](https://scriptverse.academy/tutorials/reactjs-pass-props-to-functional-component.html) - uses class component
+
+## 2.5: Unidirectional Data Flow
+
+### Self-Study List
+
+- [Unidirectional data flow](https://www.geeksforgeeks.org/unidirectional-data-flow/)
+- [Presentational vs container components](https://www.geeksforgeeks.org/presentational-vs-container-components/)
+- [Inverse data flow](https://medium.com/nerd-for-tech/inverse-data-flow-in-react-children-go-talk-to-your-parents-58437e9e57a7) - read until the block diagram, the rest of the article will be covered in later chapters.
+- [ES6 Array.Map Method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) - used for creating JSX lists in React components
