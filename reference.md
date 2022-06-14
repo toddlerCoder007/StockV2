@@ -104,3 +104,15 @@
 
 ### Helpful Links
 - [List and Keys in React](https://reactjs.org/docs/lists-and-keys.html) - understand how React manages lists using keys in the Virtual DOM
+
+## 2.7: Conditional Rendering and Lists
+
+### Self-Study List
+
+- Conditional Rendering
+- ES6 filter method
+- ES6 Ternary operator
+- ES6 && operator
+
+### Helpful Links
+
