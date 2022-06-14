@@ -32,6 +32,7 @@ Clean up the project folder by removing the following files:
 src/reportWebVitals.js
 src/setupTests.js
 src/App.test.js
+src/Logo.svg
 ```
 Remove the code that relates to these files in `index.js`.
 
