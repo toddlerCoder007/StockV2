@@ -32,9 +32,28 @@ Clean up the project folder by removing the following files:
 src/reportWebVitals.js
 src/setupTests.js
 src/App.test.js
-src/Logo.svg
+src/logo.svg
 ```
-Remove the code that relates to these files in `index.js`.
+Remove all code that refers to the above files in `index.js` and `App.js`.
+
+Remove all JSX code in between the `<div>` elements in `App.js`.
+
+```js
+// App.js
+
+import './App.css';
+function App() {
+  return (
+    <div className="App">
+      Insert your own JSX code here...
+    </div>
+  );
+}
+
+export default App;
+```
+
+Save all files and run `npm start` to make sure the template works and you're good to go!
 
 ## Part 2 - JSX Demo (To Do List)
 
