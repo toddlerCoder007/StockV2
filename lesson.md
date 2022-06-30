@@ -1,8 +1,8 @@
-## Brief
+# 2.1: Introduction to React JS
 
-> Instructors are to code from scratch. You may use the sample code in this repository as reference along the way.
+## Preparation
 
----
+Fork and clone the lesson repo from GitHub.  
 
 ## Part 1 - Create React App
 
