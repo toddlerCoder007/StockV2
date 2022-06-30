@@ -1,11 +1,11 @@
-# Introduction to React JS
+# 2.1 Introduction to React JS
 
 ## Dependencies
 
 Reference links for the entire module are maintained in a single [Reference](./reference.md) file. Each chapter will refer to relevant sections in the file.
 
 Refer to the following markdown file for the respective sections of the class:
-- [Self Studies](./studies.md)
+- [Self Studies](./references.md#21-introduction-to-react)
 - [Lesson](./lesson.md)
 - [Assignment](./assignment.md)
 
