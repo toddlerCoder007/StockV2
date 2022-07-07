@@ -133,7 +133,7 @@
 - [Async/Await](https://javascript.info/async-await)
 ### Helpful Links
 
-## 2.10: Deployment
+## 2.10: Validation and Deployment
 
 ### Self-Study List
 

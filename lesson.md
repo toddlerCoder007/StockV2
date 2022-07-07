@@ -1,4 +1,4 @@
-# 2.1: Introduction to React JS
+# 2.1 Introduction to React JS
 
 ## Preparation
 
