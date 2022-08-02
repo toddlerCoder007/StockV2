@@ -11,7 +11,7 @@
 
 ### Q2: What is a Virtual DOM?
 
-**A: It is a lightweight JavaScript representation of the DOM.
+- **A: It is a lightweight JavaScript representation of the DOM.
 - B: It is a backup DOM used to replace the actual DOM when rendering issues occur.
 - C: It is a self-healing DOM manipulation techniques.
 - D: It is a file system.
