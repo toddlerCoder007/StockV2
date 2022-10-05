@@ -20,8 +20,8 @@ Learners will be able to:
 - Create a react project using `npx create-react-app` command.
 - Write simple JSX.
 - Create a functional component and render it.
-- Use fragment `<> </>`.
-- Apply CSS.
+- Use React fragments `<> </>`.
+- Apply CSS to React components.
 
 ## Lesson Plan
 
