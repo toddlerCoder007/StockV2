@@ -109,20 +109,24 @@
 
 ### Self-Study List
 
-- Conditional Rendering
-- ES6 filter method
-- ES6 Ternary operator
-- ES6 && operator
+- [Conditional Rendering](https://reactjs.org/docs/conditional-rendering.html)
+- [ES6 filter method](https://www.geeksforgeeks.org/es6-array-filter-method/)
+- [ES6 Ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
+- [ES6 && operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND)
 
 ### Helpful Links
+- [Other techniques for conditional rendering](https://reactjs.org/docs/conditional-rendering.html)
 
 ## 2.8: React Router
 
 ### Self-Study List
+- [React Router v6 Documentation](https://reactrouter.com/en/main)
 
-### Self-Study List
+### Helpful Links
+- [React Router v5 to v6 migration](https://reactrouter.com/en/main/upgrading/v5)
 
 ## 2.9: Axios, Asynchronous and useEffect
+
 ### Self-Study List
 
 - [What is HTTP?](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
@@ -131,6 +135,7 @@
 - [API request methods](https://medium.com/adg-vit/xhr-vs-fetch-vs-ajax-vs-axios-for-api-requests-f06e6bd56b32)
 - [Promises](https://javascript.info/promise-basics)
 - [Async/Await](https://javascript.info/async-await)
+
 ### Helpful Links
 
 ## 2.10: Validation and Deployment
