@@ -15,6 +15,7 @@
 - [Getting started with React](https://medium.com/easyread/how-to-get-started-with-react-js-805bf57826ad)
 - [React Fragments](https://reactjs.org/docs/fragments.html)
 - [React and CSS](https://www.w3schools.com/react/react_css_styling.asp)
+- [ES6 concepts commonly used in React](https://www.w3schools.com/react/react_es6.asp)
 
 ### Helpful Links
 
@@ -46,7 +47,6 @@
 
 ### Helpful Links
 
-- [ES6 concepts commonly used in React](https://www.w3schools.com/react/react_es6.asp)
 - [Difference between Functional and Class components](https://www.geeksforgeeks.org/differences-between-functional-components-and-class-components-in-react/)
 - [Converting from Class to Functional Components](https://www.digitalocean.com/community/tutorials/five-ways-to-convert-react-class-components-to-functional-components-with-react-hooks)
 
@@ -141,6 +141,19 @@
 ## 2.10: Validation and Deployment
 
 ### Self-Study List
+- [What is serverless deployment?](https://www.redhat.com/en/topics/cloud-native-apps/what-is-serverless)
+- [IPs and Ports](https://ipwithease.com/difference-between-ip-address-and-port-number/)
+- [What are domains?](https://www.wpbeginner.com/beginners-guide/beginners-guide-what-is-a-domain-name-and-how-do-domains-work/)
+- [What are CDNs](https://www.techtarget.com/searchnetworking/definition/CDN-content-delivery-network)
+- [What are environment variables?](https://medium.com/chingu/an-introduction-to-environment-variables-and-how-to-use-them-f602f66d15fa)
+- [Dotenv package](https://www.npmjs.com/package/dotenv)
+- [How to use dotenv](https://www.freecodecamp.org/news/how-to-use-node-environment-variables-with-a-dotenv-file-for-node-js-and-npm/)
+- [JOI package](https://www.npmjs.com/package/joi)
+- [Computed property names](https://ui.dev/computed-property-names)
+- [Netlify](https://www.netlify.com/)
+- [How to host pages using Netlify](https://www.freecodecamp.org/news/publish-your-website-netlify-github/)
 
 ### Helpful Links
+- [Github pages](https://pages.github.com/)
+- [Deployment of React to github pages](https://create-react-app.dev/docs/deployment/)
 
