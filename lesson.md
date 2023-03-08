@@ -10,14 +10,14 @@ Fork and clone the lesson repo from GitHub.
 
 Open terminal on VS Code and enter the following command: 
 ```
-npx create-react-app my-first-app
+npx create-react-app my-app
 ```
 
-A React project will be generated in the `my-first-app` folder. Take a look at how JSX is being rendered into DOM element.
+A React project will be generated in the `my-app` folder. Take a look at how JSX is being rendered into DOM element.
 
 Change to the app folder:
 ```
-cd my-first-app
+cd my-app
 ```
 Start the app:
 ```
@@ -61,28 +61,73 @@ To accomplish this part, instructor should demonstrate using the following JSX t
 
 ```html
   <h1>                      // Big title "Todo App"
-  <ul> and <li>             // List the tasks
-  <input type='checkbox'>   // At the end of each task as done indicator
+  <div></div>               // List item
+  <input type='checkbox'>   // Check box for each task
+  <label>                   // Task label
 ```
+### Demo
+
+Create a `MyComponent` component and import into `App.js`
+
+### Activity (5 mins)
+
+Create a `TodoItem` component in the `./src` folder and import it into `App.js`.
 
 ## Part 3 - JSX Rules and Features
 
 ### Fragments 
 
-This will be a simple demonstration of using <> and </> fragment. Fragments are used to group elements together in a parent node. Note how React would return errors if two parent nodes are used without fragments. 
+This will be a simple demonstration of using `<>` and `</>` fragment. Fragments are used to group elements together in a parent node. Note how React would return errors if two parent nodes are used without fragments. Normally, we would use `<div></div>` tags for JSX fragments.
 
-### camelCase Code Style
+### *camelCase* Code Style
 
-JSX is converted into native Javascript (JS) and attributes written in JSX that will become keys in JS objects. As JS has limitation on variable names, e.g. they cannot contain dashes or reserved words. HTML attributes needs to be adapted to work around these limitations: 
-- HTML `class` attribute shall be `className`, to avoid clashing with reserved JS keyword.
+JSX is converted into native JavaScript (JS) and attributes written in JSX that will become keys in JS objects. As JS has limitation on variable names, e.g. they cannot contain dashes or reserved words. HTML attributes needs to be adapted to work around these limitations: 
+- HTML `class` attribute shall be `className`, to avoid clashing with reserved JS `class` keyword.
 - Dashes shall be removed and replaced with an initial capital, e.g. `background-color` shall be `backgroundColor`.
+
+### Self-closing Tags
+
+Not really a JSX rule, but self-closing tags are quite commonly used when inserting components with no content in React. It's basically a short-hand way of writing the closing tag, for example:
+```html
+<MyComponent></MyComponent>
+
+//...is the same as ...
+
+<MyComponent />
+```
+
+### Embedding JS Expressions
+
+In JSX, you can combine standard HTML syntax with JS, by enclosing the JS code within curly braces `{}`. 
+
+Here's an example of using JS to do some calculations:
+
+```js
+...
+return (
+  <div>
+    <p>Here's a math expression: 23 * 78 is {23 * 78}</p>
+  </div>
+);
+
+```
+### Activity (10 mins)
+
+1. Create a `MyExpressions` component and import into `App.js` (see above for a recap).
+2. Use embedded JS to code the following expressions in your return JSX statement:
+   - A math operation, e.g. +, -, * or /
+   - A math library function, e.g. Math.sqrt()
+   - Conditional/ternary operator
+   - Looping with array methods, e.g. array.map(), array.forEach()
+
 
 ## Part 4 - Applying CSS
 
 There are many ways to apply CSS to your React app:
-- Inline styling
-- CSS stylesheets
-- CSS modules
+- Global `App.css` stylesheet in `App.js`
+- Inline styling per element
+- CSS objects, e.g. define a styleObject and apply `style={styleObject}` on element
+- CSS module stylesheets (see next below)
 
 All the selectors that work with plain HTML also can apply to JSX. Feel free to try to style the various elements using the App.css file. Remember to Use camelCase when naming React styles.
 
@@ -90,18 +135,15 @@ All the selectors that work with plain HTML also can apply to JSX. Feel free to 
 
 Create a CSS module file with a `.module.css` extension, e.g. `MyComponent.module.css`. Write regular CSS in your `.module.css` file.
 ```css
-  .heading {
-    color: red;
-    padding: 1.5rem;
-    text-align: center;
-  } 
-  .bodyText {
-    color: blue;  
-  }
-
+.bodyText {
+  color: blue;
+  background-color: yellow;
+  padding: 20px;
+  border: 5px solid fuchsia;
+}
 ```
-
 Import the CSS module file into your component:
+
 ```js
   // In MyComponent.js file
    
@@ -109,8 +151,7 @@ Import the CSS module file into your component:
   function MyComponent() {
     return (
       <>
-        <h1 className={styles.heading}>Component Heading</h1>
-        <p className={styles.bodyText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sagittis elit ipsum, iaculis bibendum eros mattis quis. Proin nisi orci, ultricies quis volutpat aliquam, ornare non odio. </p>
+         <div className={styles.bodyText}>Using CSS Modules (component.module.css).</div>
       </>
     )
   }
