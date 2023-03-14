@@ -55,7 +55,7 @@
 ### Self-Study List
 
 - [Using the State Hook](https://reactjs.org/docs/hooks-state.html) - from the official React documentation 
-- [useState API Hook](https://beta.reactjs.org/apis/usestate)
+- [Built-in React Hooks](https://beta.reactjs.org/reference/react)
 
 ### Legacy (optional)
 
