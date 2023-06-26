@@ -19,8 +19,7 @@
 
 ### Helpful Links
 
-- [React Official Page](https://reactjs.org/docs/getting-started.html)
-- [React Official Page (beta)](https://beta.reactjs.org)
+- [React Official Page](https://react.dev/learn)
 - [Create React App Page](https://create-react-app.dev/)
 
 **How to insert images into React**
@@ -47,6 +46,7 @@
 
 ### Helpful Links
 
+- [ES6 concepts commonly used in React](https://www.w3schools.com/react/react_es6.asp)
 - [Difference between Functional and Class components](https://www.geeksforgeeks.org/differences-between-functional-components-and-class-components-in-react/)
 - [Converting from Class to Functional Components](https://www.digitalocean.com/community/tutorials/five-ways-to-convert-react-class-components-to-functional-components-with-react-hooks)
 
@@ -54,8 +54,8 @@
 
 ### Self-Study List
 
-- [Using the State Hook](https://reactjs.org/docs/hooks-state.html) - from the official React documentation 
-- [Built-in React Hooks](https://beta.reactjs.org/reference/react)
+- [State: A Componenent's Memory](https://react.dev/learn/state-a-components-memory)
+- [useState API Reference](https://react.dev/reference/react/useState)
 
 ### Legacy (optional)
 
@@ -66,7 +66,7 @@
 
 ### Helpful Links
 
-- [Hooks Reference](https://reactjs.org/docs/hooks-reference.html) - built-in hooks API
+- [Hooks Reference](https://react.dev/reference/react) - built-in hooks API
 - [Usefuls React Hooks](https://www.smashingmagazine.com/2021/11/useful-react-hooks/) - list of React hooks that you may encounter in the future 
 - [Introduction to React Hooks](https://www.freecodecamp.org/news/introduction-to-react-hooks/) - talks about useEffect hook, which you will learn in future chapters
 - [react-use package](https://github.com/streamich/react-use) - 3rd party NPM package libray of interesting hooks
@@ -76,8 +76,8 @@
 ### Self-Study List
 
 - [React Events](https://www.w3schools.com/react/react_events.asp) - quick intro from w3schools
-- [Passing Functions into useState Updates](https://reactjs.org/docs/hooks-reference.html#usestate) - Passing functions to update functions in useState
-- [Responding to Events](https://beta.reactjs.org/learn/adding-interactivity#responding-to-events) - from ReactJS documentation (beta)
+- [useState API Reference](https://react.dev/reference/react/useState) - Passing functions to update functions in useState
+- [Responding to Events](https://react.dev/learn/responding-to-events) - from ReactJS documentation
 - [Higher Order Functions](https://www.freecodecamp.org/news/a-quick-intro-to-higher-order-functions-in-javascript-1a014f89c6b) - somewhat theoretical, but essential to under how functions are passed in JS
 
 ### Legacy (optional)
@@ -98,18 +98,18 @@
 ### Self-Study List
 
 - [Intro to useReducer](https://www.w3schools.com/react/react_usereducer.asp) - brief intro from w3Schools
-- [useReducer API Hook](https://beta.reactjs.org/apis/usereducer) - from official beta Hooks API documentation
-- [Intro to useContext](https://beta.reactjs.org/apis/usecontext) 
+- [useReducer API Hook](https://react.dev/reference/react/useReducer) - from official beta Hooks API documentation
+- [useContext API Hook](https://react.dev/reference/react/useContext) 
 - [useContext API Hook](https://www.w3schools.com/react/react_usecontext.asp)
 
 ### Helpful Links
-- [List and Keys in React](https://reactjs.org/docs/lists-and-keys.html) - understand how React manages lists using keys in the Virtual DOM
+- [List and Keys in React](https://react.dev/learn/rendering-lists) - understand how React manages lists using keys in the Virtual DOM
 
 ## 2.7: Conditional Rendering and Lists
 
 ### Self-Study List
 
-- [Conditional Rendering](https://reactjs.org/docs/conditional-rendering.html)
+- [Conditional Rendering](https://react.dev/learn/conditional-rendering)
 - [ES6 filter method](https://www.geeksforgeeks.org/es6-array-filter-method/)
 - [ES6 Ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
 - [ES6 && operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND)
