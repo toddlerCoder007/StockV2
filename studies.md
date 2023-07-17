@@ -26,9 +26,9 @@ Legacy documentation (optional)
 
 ### Helpful Links (References)
 
-- [React Official Page](https://reactjs.org/docs/getting-started.html)
-- [React Official Page (beta)](https://beta.reactjs.org)
+- [React Official Page](https://react.dev/)
 - [Create React App Page](https://create-react-app.dev/)
+- [Vite - alternative to CRA](https://vitejs.dev/)
 
 How to insert images into React
 - [Adding images to fonts and files](https://create-react-app.dev/docs/adding-images-fonts-and-files/)
