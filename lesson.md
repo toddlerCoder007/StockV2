@@ -55,6 +55,10 @@ export default App;
 
 Save all files and run `npm start` to make sure the template works and you're good to go!
 
+### Activity (5 mins)
+
+Modify `App.js` to include a short profile about yourself (3 to 5 sentences about yourself and your aspirations)
+
 ## Part 2 - JSX Demo (To Do List)
 
 To accomplish this part, instructor should demonstrate using the following JSX to create a functional component. Edit `App.js` to accommodate the following JSX code.
@@ -69,9 +73,9 @@ To accomplish this part, instructor should demonstrate using the following JSX t
 
 Create a `MyComponent` component and import into `App.js`
 
-### Activity (5 mins)
+### Activity (10 mins)
 
-Create a `TodoItem` component in the `./src` folder and import it into `App.js`.
+Create a `TodoItem` component in the `./src` folder and import it into `App.js`. Use the JSX learned in this section to create the component.
 
 ## Part 3 - JSX Rules and Features
 
@@ -120,7 +124,6 @@ return (
    - Conditional/ternary operator
    - Looping with array methods, e.g. array.map(), array.forEach()
 
-
 ## Part 4 - Applying CSS
 
 There are many ways to apply CSS to your React app:
@@ -158,3 +161,7 @@ Import the CSS module file into your component:
 ```
 
 CSS code inside a module is available only to the component that imports it, therefore there is no risk global name conflicts.
+
+### Activity (5 mins)
+
+Add styling to `Todo.js` and `App.js` using CSS Modules.
