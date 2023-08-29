@@ -14,9 +14,9 @@ NPM
 - [What is the use of package.json](https://docs.npmjs.com/creating-a-package-json-file)
 
 React
-- [React Quick Start](https://beta.reactjs.org/learn)
-- [Your first component](https://beta.reactjs.org/learn/your-first-component)
-- [Writing markup with JSX](https://beta.reactjs.org/learn/writing-markup-with-jsx)
+- [React Quick Start](https://react.dev/learn/writing-markup-with-jsx)
+- [Your first component](https://react.dev/learn/your-first-component)
+- [Writing markup with JSX](https://react.dev/learn/writing-markup-with-jsx)
 - [React and CSS](https://www.w3schools.com/react/react_css_styling.asp)
 
 Legacy documentation (optional)
