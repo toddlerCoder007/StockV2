@@ -73,9 +73,13 @@ To accomplish this part, instructor should demonstrate using the following JSX t
 
 Create a `MyComponent` component and import into `App.js`
 
+> Instructors may refer to `code/my-app/src/MyComponent.js` for code sample
+
 ### Activity (10 mins)
 
 Create a `TodoItem` component in the `./src` folder and import it into `App.js`. Use the JSX learned in this section to create the component.
+
+> Instructors may refer to `code/my-app/src/App.js` for code sample
 
 ## Part 3 - JSX Rules and Features
 
@@ -124,6 +128,8 @@ return (
    - Conditional/ternary operator
    - Looping with array methods, e.g. array.map(), array.forEach()
 
+> Instructors may refer to `code/my-app/src/MyExpressions.js` for code sample
+ 
 ## Part 4 - Applying CSS
 
 There are many ways to apply CSS to your React app:
@@ -159,9 +165,12 @@ Import the CSS module file into your component:
     )
   }
 ```
+> Instructors may refer to `code/my-app/src/MyComponent.module.css` for code sample
 
 CSS code inside a module is available only to the component that imports it, therefore there is no risk global name conflicts.
 
 ### Activity (5 mins)
 
 Add styling to `Todo.js` and `App.js` using CSS Modules.
+
+> Instructors may refer to `code/my-app/src/` for code samples
