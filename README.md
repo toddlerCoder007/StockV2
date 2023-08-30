@@ -30,12 +30,12 @@ Learners will be able to:
 |   5mins | Start zoom session|So that students can join early and start class on time|
 | 10 mins | Self studies check-in | Encourage students to ask questions in regards to their self studies material.|
 | 45 mins | Part 1: Create React App<br>Part 2: JSX Demo - To Do List | Code-along with instructor.Ensure that everyone is able to create a basic React codebase on their dev environment.|
-||**1 HR MARK**|
-| 5 mins | Break ||
+||**1 HR MARK**||
+|  5 mins | Break ||
 | 25 mins | Part 3: JSX Rules and Features<br>Expressions in JSX|Demo to learners and get them to code their own JSX expressions. Share with the class.|
 | 30 mins | Part 4: Applying CSS in React | Demo with coding along
-|||**2 HR MARK**|
-| 5 mins | Break |
-| 55 mins | Instructors walk through assignments and use remaining time to work on assignment. |
-|||**3 HR MARK**|
+||**2 HR MARK**||
+|  5 mins | Break ||
+| 55 mins | Assignments | Instructors walk through assignments and use remaining time to work on assignment. |
+||**3 HR MARK**||
 
