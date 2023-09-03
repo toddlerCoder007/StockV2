@@ -10,3 +10,12 @@ Challenge yourselves by creating a new project using `create-react-app` and use 
 
 Focus on using JSX while styling the elements as needed.
 
+## Submission
+Submit the URL of the GitHub Repository that contains your work to NTU black board.
+Should you reference the work of your classmate(s) or online resources, give them credit by adding either the name of your classmate or URL.
+
+## Online Resources
+
+https://developer.mozilla.org/en-US/
+https://www.w3schools.com/html/
+https://stackoverflow.com/questions/14494747/how-to-add-images-to-readme-md-on-github
