@@ -77,7 +77,7 @@ Create a `MyComponent` component and import into `App.js`
 
 ### Activity (10 mins)
 
-Create a `Todo` component in the `./src` folder and import it into `App.js`. Use the JSX learned in this section to create the component.
+Create a `ToDoList` component in the `./src` folder and import it into `App.js`. Use the JSX learned in this section to create the component.
 
 > Instructors may refer to `code/my-app/src/App.js` for code sample
 
@@ -171,6 +171,6 @@ CSS code inside a module is available only to the component that imports it, the
 
 ### Activity (5 mins)
 
-Add styling to `Todo.js` and `App.js` using CSS Modules.
+Add styling to `ToDoList.js` and `App.js` using CSS Modules.
 
 > Instructors may refer to `code/my-app/src/` for code samples
