@@ -77,7 +77,7 @@ Create a `MyComponent` component and import into `App.js`
 
 ### Activity (10 mins)
 
-Create a `TodoItem` component in the `./src` folder and import it into `App.js`. Use the JSX learned in this section to create the component.
+Create a `Todo` component in the `./src` folder and import it into `App.js`. Use the JSX learned in this section to create the component.
 
 > Instructors may refer to `code/my-app/src/App.js` for code sample
 
