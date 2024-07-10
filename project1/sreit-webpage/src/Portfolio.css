@@ -1,0 +1,41 @@
+.portfolio {
+  margin-top: 20px;
+}
+
+.portfolio ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.portfolio li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.portfolio table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.portfolio th, .portfolio td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.portfolio th {
+  cursor: pointer;
+}
+
+.portfolio button {
+  margin-left: 10px;
+  color: white;
+  background: red;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.portfolio button:hover {
+  background: darkred;
+}
