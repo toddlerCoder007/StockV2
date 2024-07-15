@@ -1,69 +1,82 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './App.css';
 import Header from './Header';
 import Portfolio from './Portfolio';
 import AddStock from './AddStock';
 
-// Dummy data to mimic the CSV data
+
+const API_KEY = 'cq8q0hpr01qnitif2ar0cq8q0hpr01qnitif2arg'; //  Finnhub API key
+
 const dummyData = [
   {
-    "Name": "CapitaLand Ascendas REIT",
-    "Price": 2.57,
-    "Distribution Yield": "5.90%",
-    "Price to Book": 1.14,
-    "DPU": 0.1516,
-    "NAV": 2.26,
-    "Property Yield": "6.06%",
-    "Gearing Ratio*": "37.90%"
+    "Name": "Apple",
+    "Symbol": "AAPL"
   },
   {
-    "Name": "CapitaLand Ascott Trust",
-    "Price": 0.88,
-    "Distribution Yield": "7.51%",
-    "Price to Book": 0.75,
-    "DPU": 0.0657,
-    "NAV": 1.16,
-    "Property Yield": "5.20%",
-    "Gearing Ratio*": "39.50%"
+    "Name": "Google",
+    "Symbol": "GOOG"
   },
   {
-    "Name": "CapitaLand China Trust",
-    "Price": 0.67,
-    "Distribution Yield": "10.06%",
-    "Price to Book": 0.55,
-    "DPU": 0.0674,
-    "NAV": 1.21,
-    "Property Yield": "5.43%",
-    "Gearing Ratio*": "41.50%"
+    "Name": "Boeing",
+    "Symbol": "BA"
   },
   {
-    "Name": "CapitaLand Integrated Commercial Trust",
-    "Price": 1.99,
-    "Distribution Yield": "5.40%",
-    "Price to Book": 0.93,
-    "DPU": 0.1075,
-    "NAV": 2.13,
-    "Property Yield": "4.65%",
-    "Gearing Ratio*": "39.90%"
+    "Name": "Microsoft",
+    "Symbol": "MSFT"
   },
   {
-    "Name": "Mapletree Industrial Trust",
-    "Price": 2.11,
-    "Distribution Yield": "6.36%",
-    "Price to Book": 1.20,
-    "DPU": 0.1343,
-    "NAV": 1.76,
-    "Property Yield": "6.11%",
-    "Gearing Ratio*": "39.00%"
+    "Name": "Intel",
+    "Symbol": "INTC"
   }
 ];
 
 function App() {
-  const [stocks, setStocks] = useState([]);
+  const [stocks, setStocks] = useState(dummyData);
+
+  const fetchStockData = async (symbol) => {
+    try {
+      console.log(`Fetching data for symbol: ${symbol}`);
+      const response = await axios.get(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${API_KEY}`);
+      console.log(response.data); // Log the response to see the data structure
+      if (response.data.c) {
+        const latestPrice = response.data.c;
+        return {
+          close: latestPrice,
+          symbol
+        };
+      } else {
+        console.error(`No data found for symbol: ${symbol}`);
+        return { close: null, symbol };
+      }
+    } catch (error) {
+      console.error(`Error fetching data for symbol: ${symbol}`, error);
+      return { close: null, symbol };
+    }
+  };
+
+  const fetchData = async () => {
+    console.log('Fetching data for all stocks');
+    const updatedStocks = await Promise.all(
+      stocks.map(async (stock) => {
+        const result = await fetchStockData(stock.Symbol);
+        return {
+          ...stock,
+          Price: result.close
+        };
+      })
+    );
+    console.log('Updated Stocks:', updatedStocks); // Log updated stocks to verify state
+    setStocks(updatedStocks);
+  };
 
   useEffect(() => {
-    // Mimic fetching data from a CSV file
-    setStocks(dummyData);
+    fetchData();
+
+    // Set interval to fetch data periodically (e.g., every 5 minutes)
+    const interval = setInterval(fetchData, 300000); // 300000 ms = 5 minutes
+
+    return () => clearInterval(interval);
   }, []);
 
   const handleAddStock = (stock) => {
@@ -75,10 +88,15 @@ function App() {
     setStocks(newStocks);
   };
 
+  const handleRefresh = () => {
+    fetchData();
+  };
+
   return (
     <div className="App">
       <Header />
       <AddStock handleAdd={handleAddStock} />
+      <button className="refresh-button" onClick={handleRefresh}>Refresh Prices</button>
       <Portfolio stocks={stocks} handleDelete={handleDeleteStock} />
     </div>
   );

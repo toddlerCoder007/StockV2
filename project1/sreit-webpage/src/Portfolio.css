@@ -1,41 +1,32 @@
 .portfolio {
+  margin: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
   margin-top: 20px;
 }
 
-.portfolio ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.portfolio li {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-}
-
-.portfolio table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.portfolio th, .portfolio td {
+th, td {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-.portfolio th {
-  cursor: pointer;
+th {
+  background-color: #f4f4f4;
+  text-align: left;
 }
 
-.portfolio button {
-  margin-left: 10px;
-  color: white;
-  background: red;
-  border: none;
+button {
+  margin: 5px;
   padding: 5px 10px;
+  color: white;
+  background-color: #007bff;
+  border: none;
   cursor: pointer;
 }
 
-.portfolio button:hover {
-  background: darkred;
+button:hover {
+  background-color: #0056b3;
 }

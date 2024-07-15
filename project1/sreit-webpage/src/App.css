@@ -1,11 +1,24 @@
 .App {
-    font-family: 'Arial, sans-serif';
-    line-height: 1.6;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+.refresh-button {
+  margin: 20px;
+  padding: 10px 20px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.refresh-button:hover {
+  background-color: #0056b3;
+}
