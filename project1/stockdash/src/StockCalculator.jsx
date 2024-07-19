@@ -1,144 +1,104 @@
-/*import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import './StockCalculator.css';
+import './App.css';
 
-const API_KEY = 'qbul4hr01qmbcu8st5gcqbul4hr01qmbcu8st60';
+const API_KEY = 'cqbul4hr01qmbcu8st5gcqbul4hr01qmbcu8st60';
 
 const StockCalculator = () => {
-  const [stockName, setStockName] = useState('');
+  const [stockData, setStockData] = useState([]);
+  const [symbol, setSymbol] = useState('');
   const [purchasePrice, setPurchasePrice] = useState('');
-  const [numShares, setNumShares] = useState('');
-  const [stocks, setStocks] = useState([]);
-  const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
+  const [shares, setShares] = useState('');
 
-  const fetchLatestPrice = async (symbol) => {
+  const handleAddStock = async () => {
+    if (!symbol || !purchasePrice || !shares) return;
+
+    const quoteUrl = `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${API_KEY}`;
+    const metricsUrl = `https://finnhub.io/api/v1/stock/metric?symbol=${symbol}&metric=all&token=${API_KEY}`;
+
     try {
-      const response = await axios.get(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${API_KEY}`);
-      return response.data.c; // Latest price
-    } catch (error) {
-      console.error('Error fetching latest stock price:', error);
-      return null;
-    }
-  };
+      const [quoteResponse, metricsResponse] = await Promise.all([
+        axios.get(quoteUrl),
+        axios.get(metricsUrl)
+      ]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const latestPrice = await fetchLatestPrice(stockName);
-    if (latestPrice) {
-      const newStock = {
-        stockName,
+      const { c: currentPrice } = quoteResponse.data;
+      const { metric: { peBasicExclExtraTTM: peRatio, '52WeekHigh': weekHigh, '52WeekLow': weekLow } } = metricsResponse.data;
+
+      const gainOrLoss = ((currentPrice - purchasePrice) * shares).toFixed(2);
+
+      setStockData([...stockData, {
+        symbol,
         purchasePrice: parseFloat(purchasePrice),
-        numShares: parseInt(numShares),
-        latestPrice
-      };
-      setStocks([...stocks, newStock]);
-      setStockName('');
+        shares: parseInt(shares),
+        currentPrice,
+        gainOrLoss,
+        peRatio,
+        weekHigh,
+        weekLow
+      }]);
+
+      setSymbol('');
       setPurchasePrice('');
-      setNumShares('');
+      setShares('');
+    } catch (error) {
+      console.error('Error fetching stock data:', error);
     }
   };
-
-  const handleDelete = (index) => {
-    const updatedStocks = stocks.filter((_, i) => i !== index);
-    setStocks(updatedStocks);
-  };
-
-  const calculateTotalGainOrLoss = () => {
-    return stocks.reduce((total, stock) => {
-      const gainOrLoss = (stock.latestPrice - stock.purchasePrice) * stock.numShares;
-      return total + gainOrLoss;
-    }, 0);
-  };
-
-  const sortedStocks = [...stocks];
-  if (sortConfig.key) {
-    sortedStocks.sort((a, b) => {
-      if (a[sortConfig.key] < b[sortConfig.key]) {
-        return sortConfig.direction === 'asc' ? -1 : 1;
-      }
-      if (a[sortConfig.key] > b[sortConfig.key]) {
-        return sortConfig.direction === 'asc' ? 1 : -1;
-      }
-      return 0;
-    });
-  }
-
-  const requestSort = (key) => {
-    let direction = 'asc';
-    if (sortConfig.key === key && sortConfig.direction === 'asc') {
-      direction = 'desc';
-    }
-    setSortConfig({ key, direction });
-  };
-
-  const totalGainOrLoss = calculateTotalGainOrLoss();
 
   return (
     <div className="App">
-      <h1>Stock Gains/Losses</h1>
-      <form onSubmit={handleSubmit}>
+      <h1>Stock Tracker</h1>
+      <div className="input-container">
         <input
           type="text"
-          value={stockName}
-          onChange={(e) => setStockName(e.target.value)}
-          placeholder="Enter stock name"
-          required
+          placeholder="Stock Symbol"
+          value={symbol}
+          onChange={(e) => setSymbol(e.target.value)}
         />
         <input
           type="number"
+          placeholder="Purchase Price"
           value={purchasePrice}
           onChange={(e) => setPurchasePrice(e.target.value)}
-          placeholder="Enter purchase price"
-          required
         />
         <input
           type="number"
-          value={numShares}
-          onChange={(e) => setNumShares(e.target.value)}
-          placeholder="Enter number of shares"
-          required
+          placeholder="Number of Shares"
+          value={shares}
+          onChange={(e) => setShares(e.target.value)}
         />
-        <button type="submit">Add Stock</button>
-      </form>
+        <button onClick={handleAddStock}>Add Stock</button>
+      </div>
       <table>
         <thead>
           <tr>
-            <th onClick={() => requestSort('stockName')}>Stock Name</th>
-            <th onClick={() => requestSort('purchasePrice')}>Purchase Price (USD)</th>
-            <th onClick={() => requestSort('numShares')}>Number of Shares</th>
-            <th>Latest Price (USD)</th>
-            <th onClick={() => requestSort('gainOrLoss')}>Gain/Loss (USD)</th>
-            <th>Actions</th>
+            <th>Symbol</th>
+            <th>Purchase Price</th>
+            <th>Shares</th>
+            <th>Current Price</th>
+            <th>Gain/Loss</th>
+            <th>PE Ratio</th>
+            <th>52 Week High</th>
+            <th>52 Week Low</th>
           </tr>
         </thead>
         <tbody>
-          {sortedStocks.map((stock, index) => {
-            const gainOrLoss = (stock.latestPrice - stock.purchasePrice) * stock.numShares;
-            return (
-              <tr key={index}>
-                <td>{stock.stockName}</td>
-                <td>{stock.purchasePrice.toFixed(2)}</td>
-                <td>{stock.numShares}</td>
-                <td>{stock.latestPrice.toFixed(2)}</td>
-                <td style={{ color: gainOrLoss >= 0 ? 'green' : 'red' }}>
-                  {gainOrLoss.toFixed(2)}
-                </td>
-                <td>
-                  <button onClick={() => handleDelete(index)}>Delete</button>
-                </td>
-              </tr>
-            );
-          })}
+          {stockData.map((stock, index) => (
+            <tr key={index}>
+              <td>{stock.symbol}</td>
+              <td>{stock.purchasePrice}</td>
+              <td>{stock.shares}</td>
+              <td>{stock.currentPrice}</td>
+              <td style={{ color: stock.gainOrLoss >= 0 ? 'green' : 'red' }}>
+                {stock.gainOrLoss}
+              </td>
+              <td>{stock.peRatio}</td>
+              <td>{stock.weekHigh}</td>
+              <td>{stock.weekLow}</td>
+            </tr>
+          ))}
         </tbody>
-        <tfoot>
-          <tr>
-            <td colSpan="4">Total Gain/Loss (USD)</td>
-            <td style={{ color: totalGainOrLoss >= 0 ? 'green' : 'red' }}>
-              {totalGainOrLoss.toFixed(2)}
-            </td>
-            <td></td>
-          </tr>
-        </tfoot>
       </table>
     </div>
   );
@@ -146,12 +106,10 @@ const StockCalculator = () => {
 
 export default StockCalculator;
 
-*/
 
 
 
-
-import React, { useState } from 'react';
+/*import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 
@@ -164,6 +122,7 @@ const StockCalculator = () => {
   const fetchLatestPrice = async (symbol) => {
     const token = 'cqbul4hr01qmbcu8st5gcqbul4hr01qmbcu8st60';
     const url = `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${token}`;
+    //'https://finnhub.io/api/v1/stock/metric?symbol=${symbol}&metric=all&token=${token}'
     const response = await axios.get(url);
     return response.data.c;
   };
@@ -245,4 +204,4 @@ const StockCalculator = () => {
   );
 };
 
-export default StockCalculator;
+export default StockCalculator;*/
