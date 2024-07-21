@@ -4,57 +4,60 @@ import './App.css';
 
 const API_KEY = 'cqbul4hr01qmbcu8st5gcqbul4hr01qmbcu8st60';
 
+ // Replace with your actual API key
+
 const StockCalculator = () => {
-  const [stockData, setStockData] = useState([]);
-  const [symbol, setSymbol] = useState('');
+  const [stocks, setStocks] = useState([]);
+  const [stockName, setStockName] = useState('');
   const [purchasePrice, setPurchasePrice] = useState('');
-  const [shares, setShares] = useState('');
+  const [numShares, setNumShares] = useState('');
 
   const handleAddStock = async () => {
-    if (!symbol || !purchasePrice || !shares) return;
-
-    const quoteUrl = `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${API_KEY}`;
-    const metricsUrl = `https://finnhub.io/api/v1/stock/metric?symbol=${symbol}&metric=all&token=${API_KEY}`;
-
     try {
-      const [quoteResponse, metricsResponse] = await Promise.all([
-        axios.get(quoteUrl),
-        axios.get(metricsUrl)
-      ]);
+      const symbol = stockName.toUpperCase();
+      const quoteResponse = await axios.get(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${API_KEY}`);
+      const metricResponse = await axios.get(`https://finnhub.io/api/v1/stock/metric?symbol=${symbol}&metric=all&token=${API_KEY}`);
 
-      const { c: currentPrice } = quoteResponse.data;
-      const { metric: { peBasicExclExtraTTM: peRatio, '52WeekHigh': weekHigh, '52WeekLow': weekLow } } = metricsResponse.data;
+      const latestPrice = quoteResponse.data.c;
+      const peRatio = metricResponse.data.metric.peExclExtraTTM;
+      const high52Weeks = metricResponse.data.metric['52WeekHigh'];
+      const low52Weeks = metricResponse.data.metric['52WeekLow'];
+      const purchaseAmount = parseFloat(purchasePrice);
+      const shares = parseInt(numShares, 10);
+      const totalInvestment = purchaseAmount * shares;
+      const totalValue = latestPrice * shares;
+      const gainLoss = totalValue - totalInvestment;
+      const gainLossPercentage = ((latestPrice - purchaseAmount) / purchaseAmount) * 100;
 
-      const gainOrLoss = ((currentPrice - purchasePrice) * shares).toFixed(2);
-
-      setStockData([...stockData, {
+      const newStock = {
         symbol,
-        purchasePrice: parseFloat(purchasePrice),
-        shares: parseInt(shares),
-        currentPrice,
-        gainOrLoss,
+        purchasePrice: purchaseAmount,
+        numShares: shares,
+        latestPrice,
+        gainLoss,
+        gainLossPercentage,
         peRatio,
-        weekHigh,
-        weekLow
-      }]);
+        high52Weeks,
+        low52Weeks
+      };
 
-      setSymbol('');
-      setPurchasePrice('');
-      setShares('');
+      setStocks([...stocks, newStock]);
     } catch (error) {
       console.error('Error fetching stock data:', error);
     }
   };
 
+  const totalGainLoss = stocks.reduce((acc, stock) => acc + stock.gainLoss, 0);
+
   return (
-    <div className="App">
+    <div>
       <h1>Stock Tracker</h1>
-      <div className="input-container">
+      <div>
         <input
           type="text"
-          placeholder="Stock Symbol"
-          value={symbol}
-          onChange={(e) => setSymbol(e.target.value)}
+          placeholder="Stock Name"
+          value={stockName}
+          onChange={(e) => setStockName(e.target.value)}
         />
         <input
           type="number"
@@ -65,39 +68,49 @@ const StockCalculator = () => {
         <input
           type="number"
           placeholder="Number of Shares"
-          value={shares}
-          onChange={(e) => setShares(e.target.value)}
+          value={numShares}
+          onChange={(e) => setNumShares(e.target.value)}
         />
         <button onClick={handleAddStock}>Add Stock</button>
       </div>
       <table>
         <thead>
           <tr>
-            <th>Symbol</th>
+            <th>Stock Name</th>
             <th>Purchase Price</th>
-            <th>Shares</th>
-            <th>Current Price</th>
+            <th>Number of Shares</th>
+            <th>Latest Price</th>
             <th>Gain/Loss</th>
-            <th>PE Ratio</th>
-            <th>52 Week High</th>
-            <th>52 Week Low</th>
+            <th>Gain/Loss %</th>
+            <th>P/E Ratio</th>
+            <th>52 Weeks High</th>
+            <th>52 Weeks Low</th>
           </tr>
         </thead>
         <tbody>
-          {stockData.map((stock, index) => (
+          {stocks.map((stock, index) => (
             <tr key={index}>
               <td>{stock.symbol}</td>
-              <td>{stock.purchasePrice}</td>
-              <td>{stock.shares}</td>
-              <td>{stock.currentPrice}</td>
-              <td style={{ color: stock.gainOrLoss >= 0 ? 'green' : 'red' }}>
-                {stock.gainOrLoss}
+              <td>{stock.purchasePrice.toFixed(2)}</td>
+              <td>{stock.numShares}</td>
+              <td>{stock.latestPrice.toFixed(2)}</td>
+              <td style={{ color: stock.gainLoss >= 0 ? 'green' : 'red' }}>
+                {stock.gainLoss.toFixed(2)}
               </td>
-              <td>{stock.peRatio}</td>
-              <td>{stock.weekHigh}</td>
-              <td>{stock.weekLow}</td>
+              <td style={{ color: stock.gainLossPercentage >= 0 ? 'green' : 'red' }}>
+                {stock.gainLossPercentage.toFixed(2)}%
+              </td>
+              <td>{stock.peRatio.toFixed(2)}</td>
+              <td>{stock.high52Weeks.toFixed(2)}</td>
+              <td>{stock.low52Weeks.toFixed(2)}</td>
             </tr>
           ))}
+          <tr>
+            <td colSpan="4">Total Gain/Loss</td>
+            <td colSpan="5" style={{ color: totalGainLoss >= 0 ? 'green' : 'red' }}>
+              {totalGainLoss.toFixed(2)}
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
