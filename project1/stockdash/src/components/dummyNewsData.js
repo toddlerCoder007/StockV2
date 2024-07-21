@@ -1,4 +1,4 @@
-export const dummyNewsData = [{
+export const dummyNewsData = {
     "items": "50",
     "sentiment_score_definition": "x <= -0.35: Bearish; -0.35 < x <= -0.15: Somewhat-Bearish; -0.15 < x < 0.15: Neutral; 0.15 <= x < 0.35: Somewhat_Bullish; x >= 0.35: Bullish",
     "relevance_score_definition": "0 < x <= 1, with a higher score indicating higher relevance.",
@@ -174,7 +174,7 @@ export const dummyNewsData = [{
     ],
     "summary": "Why has a Florida court dismissed a case against Trump alleging he mishandled classified documents? A case against former US President Donald Trump, alleging that he mishandled classified documents in violation of the Espionage Act, has been dismissed by US District Judge Aileen Cannon in Florida.",
     "banner_image": "https://www.aljazeera.com/wp-content/uploads/2024/07/2024-07-15T142645Z_1935895531_RC2YWV9NJV6U_RTRMADP_3_USA-TRUMP-DOCUMENTS-1721138431.jpg?resize=770%2C513&quality=80",
-    "source": "Al Jareeza",
+    "source": "Al Jazeera",
     "category_within_source": "n/a",
     "source_domain": "www.aljazeera.com",
     "topics": [],
@@ -1839,4 +1839,4 @@ export const dummyNewsData = [{
     ]
     }
     ]
-    }]; 
+    }; 
