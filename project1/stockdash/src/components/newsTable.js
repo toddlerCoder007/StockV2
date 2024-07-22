@@ -14,9 +14,10 @@ function NewsTable( {newsData, newsHeaderTitle} ) {
         <table className={`${styles.table}`}>
           <thead>
             <tr>
-              <td>
+              {newsHeaderTitle === "General News" ? <td>{newsHeaderTitle}</td> : <><td style={{backgroundColor: "#FFFFFF"}}></td><td style={{backgroundColor: "#86adfc"}}>{newsHeaderTitle}</td></>}
+              {/* <td style={{backgroundColor: newsHeaderTitle === "General News" ? "inherit": "#e4f7d5"}}>
                 {newsHeaderTitle}
-              </td>
+              </td> */}
             </tr>
           </thead>
           <tbody>

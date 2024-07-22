@@ -1,14 +1,14 @@
-.newsHeader{
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 50px;
-    
-}
+  .newsHeader{
+      font-size: 2em;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 50px;
+      
+  }
 
-.newsSubheader {
-    font-style: italic;
-}
+  .newsSubheader {
+      font-style: italic;
+  }
 
   .button {
     min-width: 3rem;
@@ -46,18 +46,4 @@
     max-width: 300px; /* Ensures a maximum width */
   }
   
-  .news-title {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
   
-  .news-summary {
-    font-size: 1em;
-    margin-bottom: 10px;
-  }
-  
-  .news-source,
-  .news-date {
-    font-size: 0.9em;
-    color: #555;
-  }
