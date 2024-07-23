@@ -34,3 +34,8 @@ th {
 h2 {
   margin-top: 20px;
 }
+.inputTable {
+  display: flex;
+  flex-direction: column;
+
+}
