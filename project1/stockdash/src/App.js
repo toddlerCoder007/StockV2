@@ -5,7 +5,7 @@ import './App.css';
 import Header from './Header';
 import Portfolio from './Portfolio';
 import AddStock from './AddStock';
-import AboutUs from './AboutUs';
+import AboutUs from './components/AboutUs';
 import ContactUs from './ContactUs';
 import LogIn from './LogIn';
 import StockCalculator from './StockCalculator';
@@ -17,7 +17,7 @@ const API_KEY = 'YOUR_FINNHUB_API_KEY'; // Finnhub API key
 const dummyData = [
   {
     "Name": "Apple",
-    "Symbol": "AAPLs",
+    "Symbol": "AAPL",
     "Price": 230,
     "Quantity": 10
   },
@@ -151,7 +151,7 @@ function App() {
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/portfolio">Portfolio</Link></li>
-            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/about">News</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
             <li><Link to="/login">Log In</Link></li>
             <li><Link to="/profile">Profile</Link></li>
