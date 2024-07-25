@@ -17,7 +17,7 @@ const API_KEY = 'YOUR_FINNHUB_API_KEY'; // Finnhub API key
 const dummyData = [
   {
     "Name": "Apple",
-    "Symbol": "AAPLs",
+    "Symbol": "AAPL",
     "Price": 230,
     "Quantity": 10
   },
