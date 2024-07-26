@@ -10,6 +10,7 @@ import ContactUs from './ContactUs';
 import LogIn from './LogIn';
 import StockCalculator from './StockCalculator';
 import UserProfile from './UserProfile';
+import Dividend from './Dividend'
 
 const API_KEY = 'YOUR_FINNHUB_API_KEY'; // Finnhub API key 
 //const API_KEY = 'xyz'; // Finnhub API key
@@ -156,6 +157,7 @@ function App() {
             <li><Link to="/login">Log In</Link></li>
             <li><Link to="/profile">Profile</Link></li>
             <li><Link to="/stockcalculator">P&L</Link></li>
+            <li><Link to="/dividend">dividend</Link></li>
           </ul>
         </nav>
         <Routes>
@@ -172,6 +174,7 @@ function App() {
           <Route path="/login" element={<LogIn />} />
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/stockcalculator" element={<StockCalculator />} />
+          <Route path="/dividend" element={<Dividend />} />
         </Routes>
       </div>
     </Router>
