@@ -25,9 +25,9 @@ const AboutUs = () => {
     setShowSentimentScore(false);
     try {
       setNewsIsLoading(true);
-      //const response = await getNews.get("/query?function=NEWS_SENTIMENT&apikey=Y3TOA81O8IORQRMM");
+      const response = await getNews.get("/query?function=NEWS_SENTIMENT&apikey=ZHAC5CN9YXPC94GR");
       // const response = await getNews.get("/query?function=NEWS_SENTIMENT&topics=financial_markets,&apikey=ZHAC5CN9YXPC94GR");
-      const response = await getNews.get("/query");
+      // const response = await getNews.get("/query");
       if (response.data && response.data.feed) {
         console.log("✔ News:", response.data.feed);
         setNewsData(response.data.feed);
