@@ -1,18 +1,17 @@
-# Group 2 Project Documentation 
+# Getting Started with Create React App
 
-## Members
- - Kok Peng
- - Yichen
- - Arun
- - Lina
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
- ## About 
+## Available Scripts
 
- This project aims to create a customised financial stock tracker for users based on real-time APIs. 
+In the project directory, you can run:
 
- ## To start project
-```
- cd \project1\stockdash
- npm install 
- npm start
-```
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### Group 2 Project Documentation 
