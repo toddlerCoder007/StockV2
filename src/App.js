@@ -6,7 +6,7 @@ import Header from './Header';
 import Portfolio from './Portfolio';
 import AddStock from './AddStock';
 import AboutUs from './components/AboutUs';
-import ContactUs from './ContactUs';
+import ContactUs from './components/ContactUs';
 import LogIn from './LogIn';
 import StockCalculator from './StockCalculator';
 import UserProfile from './UserProfile';
