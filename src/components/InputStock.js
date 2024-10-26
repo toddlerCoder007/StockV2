@@ -1,4 +1,5 @@
 // inputStock.js
+import React from 'react';
 import styles from "./inputStock.module.css";
 
 function InputStock({stockName, setStockName, newsFinResponse, sentimentScore, showSentimentScore}) {
