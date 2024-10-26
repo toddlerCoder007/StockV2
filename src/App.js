@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
@@ -52,7 +52,7 @@ function App() {
   const [stocks, setStocks] = useState(dummyData);
   const [sortConfig, setSortConfig] = useState({ key: 'Name', direction: 'ascending' });
 
-  const fetchStockData = async (symbol) => {
+  const fetchStockData = useCallback(async (symbol) => {
     try {
       console.log(`Fetching data for symbol: ${symbol}`);
       const response = await axios.get(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${API_KEY}`);
@@ -71,24 +71,9 @@ function App() {
       console.error(`Error fetching data for symbol: ${symbol}`, error);
       return { close: null, symbol };
     }
-  };
+  }, []);
 
-  //const fetchData = async () => {
-  //  console.log('Fetching data for all stocks');
-  //  const updatedStocks = await Promise.all(
-  //    stocks.map(async (stock) => {
-  //      const result = await fetchStockData(stock.Symbol);
-  //      return {
-  //        ...stock,
-  //        Price: result.close
-  //      };
-  //    })
-  //  );
-  //  console.log('Updated Stocks:', updatedStocks); // Log updated stocks to verify state
-  //  setStocks(updatedStocks);
-  //};
-
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     console.log('Fetching data for all stocks');
     const updatedStocks = await Promise.all(
       stocks.map(async (stock) => {
@@ -101,17 +86,14 @@ function App() {
     );
     console.log('Updated Stocks:', updatedStocks); // Log updated stocks to verify state
     setStocks(updatedStocks);
-  };
-
+  }, [stocks, fetchStockData]);
 
   useEffect(() => {
     fetchData();
-
     // Set interval to fetch data periodically (every 5 minutes)
     const interval = setInterval(fetchData, 300000); // 300000 ms = 5 minutes
-
     return () => clearInterval(interval);
-  }, []);
+  }, [fetchData]);
 
   const handleAddStock = (stock) => {
     setStocks([...stocks, stock]);
