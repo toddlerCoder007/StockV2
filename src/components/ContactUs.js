@@ -6,7 +6,7 @@ const ContactUs = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [subject, setSubject] = useState("");
-    cosnt [message, setMessage] = useState("");
+    const [message, setMessage] = useState("");
     const [errors, setErrors] = useState("");
 
     const schema = Joi.object({
@@ -14,7 +14,7 @@ const ContactUs = () => {
             "string.empty": "Name is required",
             "string.min": "Name should be at least 3 characters long",
         }),
-        email: Joi.string().email({ tlds: {allow: False}}).required().messages({
+        email: Joi.string().email({ tlds: {allow: false}}).required().messages({
             "string.empty": "Email is required",
             "string.email": "Invalid email format"
         }),
