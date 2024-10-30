@@ -63,8 +63,9 @@ const ContactUs = () => {
           <div className="contact-us-container">
             <form onSubmit={handleSubmit} className="contact-form">
               <div className="form-group">
-                <label>Name:</label>
+                <label htmlFor="name">Name:</label>
                 <input
+                  id="name"
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -73,8 +74,9 @@ const ContactUs = () => {
                 {errors.name && <p className="error">{errors.name}</p>}
               </div>
               <div className="form-group">
-                <label>Email:</label>
+                <label htmlFor="email">Email:</label>
                 <input
+                  id="email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -83,8 +85,9 @@ const ContactUs = () => {
                 {errors.email && <p className="error">{errors.email}</p>}
               </div>
               <div className="form-group">
-                <label>Subject:</label>
+                <label htmlFor="subject">Subject:</label>
                 <input
+                  id="subject"
                   type="text"
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
@@ -93,8 +96,9 @@ const ContactUs = () => {
                 {errors.subject && <p className="error">{errors.subject}</p>}
               </div>
               <div className="form-group">
-                <label>Message:</label>
+                <label htmlFor="message">Message:</label>
                 <textarea
+                  id="message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   className="form-control"
