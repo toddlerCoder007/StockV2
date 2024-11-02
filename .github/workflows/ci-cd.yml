@@ -17,7 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Step 1: Check out the code
-      - uses: actions/checkout@v4
+      - name: Do checkout
+        uses: actions/checkout@v4
 
       # Step 2: Set up Node.js
       - name: Set up Node.js
